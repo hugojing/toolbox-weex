@@ -1,0 +1,53 @@
+<template>
+  <div>
+    <text class="title">最多使用</text>
+    <div class="tools">
+      <div repeat="tool in tools" class="tool">
+        <image style="width: 150px; height: 150px;" src="{{tool}}"></image>
+        <text class="subtitle">{{'tool' + $index}}</text>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+  .title {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .tools {
+    flex-direction: row;
+    width: 750px;
+    height: 300px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tool {
+    width: 200;
+    height: 200;
+    padding-right: 20px;
+  }
+</style>
+
+<script>
+  module.exports = {
+    data: {
+      tools: ['http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
+              'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
+              'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
+              'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658',
+              'http://hbimg.b0.upaiyun.com/669e5547a3446ac88d2608e737f94c078815bbb37f1c-sRXKJY_fw658',
+              'http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
+              'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
+              'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
+              'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658',
+              'http://hbimg.b0.upaiyun.com/669e5547a3446ac88d2608e737f94c078815bbb37f1c-sRXKJY_fw658'],
+      img: 'http://hbimg.b0.upaiyun.com/bbba96a35c57e7dc1e53e7d278e44e1fd68beb09713c-Tf9wre_fw658'
+    },
+  }
+</script>
