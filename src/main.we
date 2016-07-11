@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <searchbar></searchbar>
+    <common></common>
+  </div>
+</template>
+
+<style>  
+</style>
+
+<script>
+  require('./components/searchbar.we')
+  require('./components/common.we')
+  module.exports = {
+    data: {
+      tools: ['a', 'b', 'c', 'd', 'e'],
+      img: '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg'
+    },
+    ready: function () {
+      this.ctHeight = this.$getConfig().env.deviceHeight
+    }
+  }
+</script>
