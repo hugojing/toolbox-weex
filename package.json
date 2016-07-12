@@ -17,5 +17,8 @@
     "webpack": "^1.13.1",
     "weex-html5": "0.2.18",
     "weex-loader": "^0.1.5"
+  },
+  "dependencies": {
+    "weex-components": "^0.1.3"
   }
 }

@@ -1,23 +1,14 @@
 <template>
   <div class="bg">
-    <text class="title">最常使用</text>
-    <div class="tools">
-      <div repeat="tool in tools" class="tool">
-        <image style="width: 120px; height: 120px;" src="{{tool}}"></image>
-        <text style="width: 120px; height: 20px;" class="subtitle">{{'tool' + $index}}</text>
-      </div>
+    <div class="logo">
+      <image style="width: 400; height: 400;" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"></image>
     </div>
   </div>
 </template>
 
 <style>
   .bg {
-    border-radius: 5px;
-    border-width: 1px;
-    border-color: #dadada;
-    background-color: #F7F7F7;
-    margin: 20px;
-    width: 710px;
+    align-items: center;
   }
   .title {
     font-size: 30px;
@@ -27,19 +18,19 @@
   .tools {
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+    height: 300px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 20;
   }
   .tool {
     justify-content: center;
     width: 120;
-    height: 200;
     margin: 20;
   }
   .subtitle {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
