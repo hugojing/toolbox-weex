@@ -2,9 +2,9 @@
   <div class="bg">
     <text class="title">最常使用</text>
     <div class="tools">
-      <div repeat="tool in tools" class="tool">
-        <image style="width: 120px; height: 120px;" src="{{tool}}"></image>
-        <text style="width: 120px; height: 20px;" class="subtitle">{{'tool' + $index}}</text>
+      <div repeat="tool in tools" class="tool" onclick="openMovie">
+          <image style="width: 120px; height: 120px;" src="{{tool}}"></image>
+          <text style="width: 120px; height: 20px;" class="subtitle">{{'tool' + $index}}</text>
       </div>
     </div>
   </div>
@@ -48,11 +48,30 @@
 <script>
   module.exports = {
     data: {
+      root: 'dist',
+      item: { name: 'translate' },
       tools: ['http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
               'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
               'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
               'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658'],
       img: 'http://hbimg.b0.upaiyun.com/bbba96a35c57e7dc1e53e7d278e44e1fd68beb09713c-Tf9wre_fw658'
     },
+    methods: {
+      openMovie: function () {
+        var bundleUrl = this.$getConfig().bundleUrl
+        console.log('hit', bundleUrl)
+        var dirs = this.root.split('/');
+        dirs.forEach(function(dir, index) {
+          if (!dir) dirs.splice(index, 1);
+        });
+        var root = dirs.length > 0 ? dirs[0] : '';
+        var subRoot = dirs.length > 1 ? dirs.slice(1).join('/') + '/' : '';
+        console.log('open movie page')
+        //如果pc调试，加载这个页面渲染
+        var base = './index.html?page=./' + root + '/' + subRoot
+        this.$openURL(base + this.item.name + '.js')
+        //如果app调试，打开这个页面渲染
+      },
+    }
   }
 </script>

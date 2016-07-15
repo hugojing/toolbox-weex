@@ -42,14 +42,17 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	;__weex_define__("@weex-component/78fc79f9110e446961dc15b3c6dde345", [], function(__weex_require__, __weex_exports__, __weex_module__){
+	;__weex_define__("@weex-component/4f9046382cb9a3caf4fb99b4d19bdeb5", [], function(__weex_require__, __weex_exports__, __weex_module__){
 
 	;
+	  __webpack_require__(1)
+	  __webpack_require__(2)
+	  __webpack_require__(3)
 	  __weex_module__.exports = {
 	    data: function () {return {
-	      ctHeight: 800,
+	      tools: ['a', 'b', 'c', 'd', 'e'],
 	      img: '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg'
 	    }},
 	    ready: function () {
@@ -61,51 +64,296 @@
 	;Object.assign(__weex_module__.exports.template, {
 	  "type": "div",
 	  "classList": [
-	    "ct"
+	    "bg"
 	  ],
-	  "style": {
-	    "height": function () {return this.ctHeight}
-	  },
 	  "children": [
 	    {
-	      "type": "image",
+	      "type": "logo",
 	      "classList": [
-	        "img"
-	      ],
-	      "style": {
-	        "width": 400,
-	        "height": 400
-	      },
-	      "attr": {
-	        "src": function () {return this.img}
-	      }
+	        "logo"
+	      ]
 	    },
 	    {
-	      "type": "text",
-	      "style": {
-	        "fontSize": 42
-	      },
+	      "type": "searchbar",
+	      "classList": [
+	        "searchbar"
+	      ]
+	    },
+	    {
+	      "type": "common",
+	      "classList": [
+	        "common"
+	      ]
+	    }
+	  ]
+	})
+	;__weex_module__.exports.style = __weex_module__.exports.style || {}
+	;Object.assign(__weex_module__.exports.style, {
+	  "bg": {
+	    "backgroundColor": "#F2F2F2"
+	  },
+	  "common": {
+	    "position": "absolute",
+	    "bottom": 10
+	  }
+	})
+	})
+	;__weex_bootstrap__("@weex-component/4f9046382cb9a3caf4fb99b4d19bdeb5", {
+	  "transformerVersion": "0.3.1"
+	},undefined)
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	;__weex_define__("@weex-component/searchbar", [], function(__weex_require__, __weex_exports__, __weex_module__){
+
+	;
+	  __weex_module__.exports = {
+	    data: function () {return {}},
+	  }
+
+	;__weex_module__.exports.template = __weex_module__.exports.template || {}
+	;Object.assign(__weex_module__.exports.template, {
+	  "type": "div",
+	  "children": [
+	    {
+	      "type": "input",
+	      "classList": [
+	        "searchbar"
+	      ],
 	      "attr": {
-	        "value": "Hello Weex!"
+	        "type": "text",
+	        "placeholder": ""
 	      }
 	    }
 	  ]
 	})
 	;__weex_module__.exports.style = __weex_module__.exports.style || {}
 	;Object.assign(__weex_module__.exports.style, {
-	  "ct": {
-	    "width": 750,
-	    "alignItems": "center",
-	    "justifyContent": "center"
+	  "searchbar": {
+	    "height": 100,
+	    "padding": 10,
+	    "marginLeft": 20,
+	    "marginRight": 20,
+	    "fontSize": 30,
+	    "borderRadius": 5,
+	    "backgroundColor": "#ffffff"
+	  }
+	})
+	})
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	;__weex_define__("@weex-component/common", [], function(__weex_require__, __weex_exports__, __weex_module__){
+
+	;
+	  __weex_module__.exports = {
+	    data: function () {return {
+	      root: 'dist',
+	      item: { name: 'translate' },
+	      tools: ['http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
+	              'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
+	              'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
+	              'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658'],
+	      img: 'http://hbimg.b0.upaiyun.com/bbba96a35c57e7dc1e53e7d278e44e1fd68beb09713c-Tf9wre_fw658'
+	    }},
+	    methods: {
+	      openMovie: function () {
+	        var bundleUrl = this.$getConfig().bundleUrl
+	        console.log('hit', bundleUrl)
+	        var dirs = this.root.split('/');
+	        dirs.forEach(function(dir, index) {
+	          if (!dir) dirs.splice(index, 1);
+	        });
+	        var root = dirs.length > 0 ? dirs[0] : '';
+	        var subRoot = dirs.length > 1 ? dirs.slice(1).join('/') + '/' : '';
+	        console.log('open movie page')
+	        //如果pc调试，加载这个页面渲染
+	        var base = './index.html?page=./' + root + '/' + subRoot
+	        this.$openURL(base + this.item.name + '.js')
+	        //如果app调试，打开这个页面渲染
+	      },
+	    }
+	  }
+
+	;__weex_module__.exports.template = __weex_module__.exports.template || {}
+	;Object.assign(__weex_module__.exports.template, {
+	  "type": "div",
+	  "classList": [
+	    "bg"
+	  ],
+	  "children": [
+	    {
+	      "type": "text",
+	      "classList": [
+	        "title"
+	      ],
+	      "attr": {
+	        "value": "最常使用"
+	      }
+	    },
+	    {
+	      "type": "div",
+	      "classList": [
+	        "tools"
+	      ],
+	      "children": [
+	        {
+	          "type": "div",
+	          "repeat": {
+	            "expression": function () {return this.tools},
+	            "value": "tool"
+	          },
+	          "classList": [
+	            "tool"
+	          ],
+	          "events": {
+	            "click": "openMovie"
+	          },
+	          "children": [
+	            {
+	              "type": "image",
+	              "style": {
+	                "width": 120,
+	                "height": 120
+	              },
+	              "attr": {
+	                "src": function () {return this.tool}
+	              }
+	            },
+	            {
+	              "type": "text",
+	              "style": {
+	                "width": 120,
+	                "height": 20
+	              },
+	              "classList": [
+	                "subtitle"
+	              ],
+	              "attr": {
+	                "value": function () {return 'tool'+this.$index}
+	              }
+	            }
+	          ]
+	        }
+	      ]
+	    }
+	  ]
+	})
+	;__weex_module__.exports.style = __weex_module__.exports.style || {}
+	;Object.assign(__weex_module__.exports.style, {
+	  "bg": {
+	    "borderRadius": 5,
+	    "borderWidth": 1,
+	    "borderColor": "#dadada",
+	    "backgroundColor": "#F7F7F7",
+	    "margin": 20,
+	    "width": 710
 	  },
-	  "img": {
+	  "title": {
+	    "fontSize": 30,
+	    "left": 30,
+	    "top": 30
+	  },
+	  "tools": {
+	    "flexDirection": "row",
+	    "justifyContent": "center",
+	    "paddingLeft": 20,
+	    "paddingRight": 20,
+	    "marginTop": 20
+	  },
+	  "tool": {
+	    "justifyContent": "center",
+	    "width": 120,
+	    "height": 200,
+	    "margin": 20
+	  },
+	  "subtitle": {
+	    "textAlign": "center",
+	    "fontSize": 18,
+	    "marginTop": 20,
 	    "marginBottom": 20
 	  }
 	})
 	})
-	;__weex_bootstrap__("@weex-component/78fc79f9110e446961dc15b3c6dde345", {
-	  "transformerVersion": "0.3.1"
-	},undefined)
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	;__weex_define__("@weex-component/logo", [], function(__weex_require__, __weex_exports__, __weex_module__){
+
+	;
+	  __weex_module__.exports = {
+	    data: function () {return {
+	      tools: ['http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
+	              'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
+	              'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
+	              'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658'],
+	      img: 'http://hbimg.b0.upaiyun.com/bbba96a35c57e7dc1e53e7d278e44e1fd68beb09713c-Tf9wre_fw658'
+	    }},
+	  }
+
+	;__weex_module__.exports.template = __weex_module__.exports.template || {}
+	;Object.assign(__weex_module__.exports.template, {
+	  "type": "div",
+	  "classList": [
+	    "bg"
+	  ],
+	  "children": [
+	    {
+	      "type": "div",
+	      "classList": [
+	        "logo"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "style": {
+	            "width": 400,
+	            "height": 400
+	          },
+	          "attr": {
+	            "src": "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"
+	          }
+	        }
+	      ]
+	    }
+	  ]
+	})
+	;__weex_module__.exports.style = __weex_module__.exports.style || {}
+	;Object.assign(__weex_module__.exports.style, {
+	  "bg": {
+	    "alignItems": "center"
+	  },
+	  "title": {
+	    "fontSize": 30,
+	    "left": 30,
+	    "top": 30
+	  },
+	  "tools": {
+	    "flexDirection": "row",
+	    "justifyContent": "center",
+	    "height": 300,
+	    "paddingLeft": 20,
+	    "paddingRight": 20
+	  },
+	  "tool": {
+	    "justifyContent": "center",
+	    "width": 120,
+	    "margin": 20
+	  },
+	  "subtitle": {
+	    "textAlign": "center",
+	    "fontSize": 20,
+	    "marginTop": 20,
+	    "marginBottom": 20
+	  }
+	})
+	})
 
 /***/ }
 /******/ ]);
