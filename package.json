@@ -1,5 +1,5 @@
 {
-  "name": "toolbox",
+  "name": "toolbox-weex",
   "version": "1.0.0",
   "description": "帮助你更好地了解 Weex",
   "main": "src/main.we",
