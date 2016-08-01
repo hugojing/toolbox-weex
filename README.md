@@ -24,20 +24,18 @@ npm install
 
 * `npm run serve`: HTML 预览 `http://localhost:8080/`
 
-![1]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/1.png')
+![](/images/1.png)
 
 `http://localhost:8080/index.html?page=./dist/translate.js`
 
-![2]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/2.png')
-![3]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/3.png')
+![](/images/2.png)![](/images/3.png)
 
 * 在 src 目录下 `weex main.we --qr`: Weex Playground 预览 首页
 
-![4]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
+![](/images/4.png)
 * 在 src 目录下 `weex translate.we --qr`: Weex Playground 预览 翻译页
 
-![5]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
-![6]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
+![](/images/5.png)![](/images/6.png)
 
 （Weex Playground 预览，需要安装 [weex-toolkit](http://alibaba.github.io/weex/doc/tools/cli.html) 才能使用 weex 命令；手机上需要使用 [Weex Playground app](http://alibaba.github.io/weex/download.html) 来扫描二维码）
 
