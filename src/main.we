@@ -1,23 +1,26 @@
 <template>
-  <div>
-    <searchbar></searchbar>
-    <common></common>
+  <div class="bg">
+    <logo class="logo"></logo>
+    <searchbar class="searchbar"></searchbar>
+    <common class="common"></common>
   </div>
 </template>
 
-<style>  
+<style>
+  .bg {
+    background-color: #F2F2F2;
+  }
+  .common {
+    position: absolute;
+    bottom: 10px;
+  }
 </style>
 
 <script>
   require('./components/searchbar.we')
   require('./components/common.we')
+  require('./components/logo.we')
   module.exports = {
-    data: {
-      tools: ['a', 'b', 'c', 'd', 'e'],
-      img: '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg'
-    },
-    ready: function () {
-      this.ctHeight = this.$getConfig().env.deviceHeight
-    }
+    data: {},
   }
 </script>

@@ -1,0 +1,80 @@
+<template>
+  <div class="bg">
+    <input class="input" type="text" placeholder="请输入……" value="{{txtInput}}" oninput="oninput"></input>
+    <wxc-button class="btn" type="default" size="middle" value="翻 译" onclick="translate"></wxc-button>
+    <text class="result" repeat="word in txtOutput.translation">{{word}}</text>
+  </div>
+</template>
+
+<style>
+  .bg {
+    background-color: #F2F2F2;
+  }
+  .input {
+    width: 750;
+    height: 200;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .btn {
+    width: 710;
+    margin: 20;
+  }
+  .result {
+    padding: 10px;
+    font-size: 30px;
+  }
+</style>
+
+<script>
+  require('weex-components')
+  module.exports = {
+    data: {
+      txtInput: '',
+      txtOutput: {},
+    },
+    methods: {
+      oninput: function(e) {
+        this.txtInput = e.value
+      },
+      translate: function(e) {
+        var self = this
+        var stream = require('@weex-module/stream')
+        var modal = require('@weex-module/modal')
+        var GET_URL = 'https://fanyi.youdao.com/openapi.do?keyfrom=min-toolbox&key=1267180728&type=data&doctype=json&version=1.1&q=' + self.txtInput
+        stream.fetch({
+          method: 'GET',
+          url: GET_URL,
+          type: 'json'
+        }, function (ret) {
+          if (typeof ret == 'string') {
+            ret = JSON.parse(ret)
+          }
+          if (!ret.ok) {
+            modal.alert({
+              message: '网络通信失败，请确认网络状况',
+              okTitle: '好'
+            })
+          } else {
+            if (typeof ret.data == 'string') {
+              ret.data = JSON.parse(ret.data)
+            }
+            if (ret.data.errorCode == 0) {
+              self.txtOutput = ret.data
+            } else {
+              modal.alert({
+                message: '无法进行有效的翻译, 错误码 ' + ret.data.errorCode,
+                okTitle: '好'
+              })
+            }
+          }
+        }, function (response) {
+          console.log('get in progress:'+response.length);
+          self.txtOutput = "bytes received:"+response.length;
+        })
+      }
+    }
+  }
+</script>
