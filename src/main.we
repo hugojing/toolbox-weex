@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
-    <logo class="logo"></logo>
-    <searchbar class="searchbar"></searchbar>
+    <logo></logo>
+    <searchbar></searchbar>
     <common class="common"></common>
   </div>
 </template>

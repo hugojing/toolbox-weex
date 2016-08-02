@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	;__weex_define__("@weex-component/bce66e635f1cba88312887763c1589cd", [], function(__weex_require__, __weex_exports__, __weex_module__){
+	;__weex_define__("@weex-component/76c78e41e69072e42f0baa4fdf4c7739", [], function(__weex_require__, __weex_exports__, __weex_module__){
 
 	;
 	  __webpack_require__(1)
@@ -62,16 +62,10 @@
 	  ],
 	  "children": [
 	    {
-	      "type": "logo",
-	      "classList": [
-	        "logo"
-	      ]
+	      "type": "logo"
 	    },
 	    {
-	      "type": "searchbar",
-	      "classList": [
-	        "searchbar"
-	      ]
+	      "type": "searchbar"
 	    },
 	    {
 	      "type": "common",
@@ -92,7 +86,7 @@
 	  }
 	})
 	})
-	;__weex_bootstrap__("@weex-component/bce66e635f1cba88312887763c1589cd", {
+	;__weex_bootstrap__("@weex-component/76c78e41e69072e42f0baa4fdf4c7739", {
 	  "transformerVersion": "0.3.1"
 	},undefined)
 
@@ -281,13 +275,7 @@
 
 	;
 	  __weex_module__.exports = {
-	    data: function () {return {
-	      tools: ['http://hbimg.b0.upaiyun.com/72fa4f426ccae79476bbbc2ef723c388cf5f02ffeb96-zYEnwV_fw658',
-	              'http://hbimg.b0.upaiyun.com/028bb24be05e2eac593340d850457051df0ba5af9963-FALRwW_fw658',
-	              'http://hbimg.b0.upaiyun.com/a87362da296c22ae174b64375a36cbc8637f99411236-i8wifg_fw658',
-	              'http://hbimg.b0.upaiyun.com/c427bbd74af50b21aeba870794e46b63367b5f6f1b57-DT6c1N_fw658'],
-	      img: 'http://hbimg.b0.upaiyun.com/bbba96a35c57e7dc1e53e7d278e44e1fd68beb09713c-Tf9wre_fw658'
-	    }},
+	    data: function () {return {}},
 	  }
 
 	;__weex_module__.exports.template = __weex_module__.exports.template || {}
@@ -298,22 +286,14 @@
 	  ],
 	  "children": [
 	    {
-	      "type": "div",
-	      "classList": [
-	        "logo"
-	      ],
-	      "children": [
-	        {
-	          "type": "image",
-	          "style": {
-	            "width": 400,
-	            "height": 400
-	          },
-	          "attr": {
-	            "src": "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"
-	          }
-	        }
-	      ]
+	      "type": "image",
+	      "style": {
+	        "width": 400,
+	        "height": 400
+	      },
+	      "attr": {
+	        "src": "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"
+	      }
 	    }
 	  ]
 	})
@@ -321,29 +301,6 @@
 	;Object.assign(__weex_module__.exports.style, {
 	  "bg": {
 	    "alignItems": "center"
-	  },
-	  "title": {
-	    "fontSize": 30,
-	    "left": 30,
-	    "top": 30
-	  },
-	  "tools": {
-	    "flexDirection": "row",
-	    "justifyContent": "center",
-	    "height": 300,
-	    "paddingLeft": 20,
-	    "paddingRight": 20
-	  },
-	  "tool": {
-	    "justifyContent": "center",
-	    "width": 120,
-	    "margin": 20
-	  },
-	  "subtitle": {
-	    "textAlign": "center",
-	    "fontSize": 20,
-	    "marginTop": 20,
-	    "marginBottom": 20
 	  }
 	})
 	})
