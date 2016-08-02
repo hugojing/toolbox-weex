@@ -1,4 +1,4 @@
-# Toolbox
+# toolbox-weex
 
 一个小型的项目，帮助新手体会一下如何做出可以看、可以用的原生界面。
 
@@ -22,24 +22,46 @@ npm install
 
 ### 预览
 
-* `npm run serve`: HTML 预览 `http://localhost:8080/`
+### HTML 预览
 
-![1]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/1.png')
+```bash
+npm run serve
+```
+
+然后访问：
+
+`http://localhost:8080/`
 
 `http://localhost:8080/index.html?page=./dist/translate.js`
 
-![2]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/2.png')
-![3]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/3.png')
+### native 预览
 
-* 在 src 目录下 `weex main.we --qr`: Weex Playground 预览 首页
+native 预览，需要安装 [weex-toolkit](http://alibaba.github.io/weex/doc/tools/cli.html) 才能使用 weex 命令；
 
-![4]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
-* 在 src 目录下 `weex translate.we --qr`: Weex Playground 预览 翻译页
+手机上需要使用 [Weex Playground app](http://alibaba.github.io/weex/download.html) 来扫描二维码。
 
-![5]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
-![6]('https://raw.githubusercontent.com/hugojing/toolbox/master/images/4.png')
 
-（Weex Playground 预览，需要安装 [weex-toolkit](http://alibaba.github.io/weex/doc/tools/cli.html) 才能使用 weex 命令；手机上需要使用 [Weex Playground app](http://alibaba.github.io/weex/download.html) 来扫描二维码）
+在 src 目录下：
+
+```bash
+weex main.we --qr
+```
+
+然后用 Weex Playground app 扫描二维码即可看到：
+
+![](/images/4.png)
+
+在 src 目录下：
+
+```bash
+weex translate.we --qr
+```
+
+然后用 Weex Playground app 扫描二维码即可看到：
+
+![](/images/5.png)![](/images/6.png)
+
+
 
 ### 开发
 
