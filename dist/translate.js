@@ -1046,6 +1046,23 @@
 	;__weex_define__("@weex-component/wxc-navpage", [], function(__weex_require__, __weex_exports__, __weex_module__){
 	__webpack_require__(14);
 
+	;
+	    __weex_module__.exports = {
+	        data: function () {return {
+	          dataRole: 'navbar',
+	          backgroundColor: 'black',
+	          height: 88,
+	          title: "",
+	          titleColor: 'black',
+	          rightItemSrc: '',
+	          rightItemTitle: '',
+	          rightItemColor: 'black',
+	          leftItemSrc: '',
+	          leftItemTitle: '',
+	          leftItemColor: 'black',
+	        }}
+	    }
+
 	;__weex_module__.exports.template = __weex_module__.exports.template || {}
 	;Object.assign(__weex_module__.exports.template, {
 	  "type": "div",

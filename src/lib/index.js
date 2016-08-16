@@ -1,2 +1,2 @@
 var a = require('./a').whoami
-exports.lib = a
+exports.b = a

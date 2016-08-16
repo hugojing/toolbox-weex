@@ -17,11 +17,11 @@
 </style>
 
 <script>
-  var lib = require('./lib').lib
+  var b = require('./lib').b
+  console.log(b)
   require('./components/searchbar.we')
   require('./components/common.we')
   require('./components/logo.we')
-  console.log(lib)
   module.exports = {
     data: {},
   }
