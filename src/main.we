@@ -17,9 +17,11 @@
 </style>
 
 <script>
+  var lib = require('./lib').lib
   require('./components/searchbar.we')
   require('./components/common.we')
   require('./components/logo.we')
+  console.log(lib)
   module.exports = {
     data: {},
   }

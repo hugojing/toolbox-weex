@@ -17,6 +17,10 @@ module.exports = {
       {
         test: /\.we(\?[^?]+)?$/,
         loaders: ['weex-loader']
+      },
+      {
+        test: /\.js(\?[^?]+)?$/,
+        loaders: ['weex-loader?type=script']
       }
     ]
   }
