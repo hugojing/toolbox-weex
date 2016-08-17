@@ -11,6 +11,9 @@
 - `{{  }}` 将数据插入模板
 - Stream 模块的 fetch API 网络请求
 - Modal 模块的 alert API 警告框
+- 在 .we 文件中通过 require() 来引入 .js 文件
+- 在 webpack config 中增加对 .js 文件的处理，使得 .js 文件中可通过 require() 来引入 .js 文件
+- 在 .js 文件中通过一个临时黑魔法引入 Weex module
 
 ## 如何使用
 
@@ -78,3 +81,4 @@ weex translate.we --qr
 ## 服务
 
 有啥疑问，提 Issue 吧，我尽量帮你解答 :D
+
